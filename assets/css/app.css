@@ -43,6 +43,12 @@ img {
 .scroll-lock {
     position: relative;
     overflow: hidden;
+    /**
+    Тут бы по-хорошему отрубить скролл для сафари с помощью touch-action: none,
+    но в таком случае попап при появлении ошибок не будет пересчитывать top,
+    что приведёт к тому, что на маленьких устройствах и с большим количеством ошибок
+    попап нельзя будет проскроллить, чтобы добраться до нужного поля или контрола
+     */
 }
 
 .container {
@@ -55,7 +61,6 @@ img {
 .modal {
     width: 792px;
     max-width: 100%;
-    height: auto;
     padding: 7rem 8.4rem 8.4rem;
     border: 3px solid #000;
     border-radius: 0.8rem;
