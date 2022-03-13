@@ -85,7 +85,7 @@ img {
     font-size: 1.6rem;
     line-height: 1.8rem;
     border: 2px solid #000;
-    border-radius: 0.6rem;
+    border-radius: 0.8rem;
 }
 
 .form__alert-box .form__alert {
@@ -224,7 +224,7 @@ img {
     align-items: center;
     padding: 1.2rem 2rem;
     border: none;
-    border-radius: 0.4rem;
+    border-radius: 0.8rem;
     font-size: 1.8rem;
     line-height: 2.1rem;
     cursor: pointer;
@@ -273,7 +273,9 @@ img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 4rem;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
 }
 
 .nav.nav_layout_vertical {
@@ -380,6 +382,33 @@ img {
     background-color: unset;
 }
 
+.slider {
+    position: relative;
+}
+
+.slider__slide {
+    display: none;
+}
+
+.slider__slide.slider__slide_active {
+    display: block;
+}
+
+.slider__controls-btn {
+    position: absolute;
+    width: 8.2rem;
+    height: 100%;
+    padding: 2rem;
+}
+
+.slider__controls-btn_prev {
+    left: 0;
+}
+
+.slider__controls-btn_next {
+    right: 0;
+}
+
 .header {
     margin-bottom: 3.7rem;
 }
@@ -484,6 +513,42 @@ img {
 
 .form-filter__btn {
     padding: 1.6rem 3.6rem;
+}
+
+.section-carousel__btn {
+    padding: 1.2rem 4rem;
+    text-decoration: none;
+}
+
+.section-carousel__slider {
+    width: calc(100rem - 3rem + 16.4rem);
+    padding: 0 8.2rem;
+    max-width: 100%;
+    margin: 0 auto 4.8rem;
+}
+
+.section-carousel__slide {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    aspect-ratio: 1032 / 599;
+}
+
+.section-carousel__slide-btn {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    padding: 1.8rem 4rem;
+}
+
+.section-carousel__actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
 }
 
 .card__header {

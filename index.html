@@ -67,228 +67,265 @@
         <div class="header__bottom">
             <div class="container">
                 <nav class="nav">
-                    <a href="#sectionMuseum" class="nav__link">Музей</a>
                     <a href="#sectionExhibition" class="nav__link">Выставки и события</a>
+                    <a href="#sectionMuseum" class="nav__link">Музей</a>
                     <a href="#sectionOnline" class="nav__link">Онлайн-трансляции</a>
+                    <a href="#sectionExcursion" class="nav__link">Экскурсии и лекции в прямом эфире</a>
                 </nav>
             </div>
         </div>
     </header>
     <main class="main" id="main">
         <h1 class="visually-hidden">Музей Пушкина</h1>
-        <div class="container">
-            <section class="section" id="sectionExhibition">
-                <h2 class="section__title" id="sectionExhibitionTitle">Выставки и события</h2>
-                <div class="section__controls">
-                    <form class="form-filter form" id="formFilter" data-custom-validation="false">
-                        <h2 class="visually-hidden">Форма фильтрации событий по дате</h2>
-                        <fieldset class="tab-controls form-filter__fieldset form__fieldset">
-                            <legend class="visually-hidden">Фильтр по дате</legend>
-                            <label>
-                                <input class="form-filter__radio visually-hidden" type="radio" name="date" value="all" checked aria-controls="formFilterResultsCount">
-                                <span class="form-filter__btn btn btn_theme_secondary">Все</span>
-                            </label>
-                            <label>
-                                <input class="form-filter__radio visually-hidden" type="radio" name="date" value="today" aria-controls="formFilterResultsCount">
-                                <span class="form-filter__btn btn btn_theme_secondary">Сегодня</span>
-                            </label>
-                            <label>
-                                <input class="form-filter__radio visually-hidden" type="radio" name="date" value="tomorrow" aria-controls="formFilterResultsCount">
-                                <span class="form-filter__btn btn btn_theme_secondary">Завтра</span>
-                            </label>
-                        </fieldset>
-                        <output class="visually-hidden" id="formFilterResultsCount" aria-live="polite">Найдено событий: 3</output>
-                    </form>
-                </div>
-                <div class="section__content" id="sectionExhibitionContent">
-                    <ul class="list">
-                        <li id="sectionExhibitionItem1">
-                            <article class="card">
-                                <a class="card__img-link" aria-labelledby="sectionExhibitionItem1Title" href="#">
-                                    <img class="card__img" width="312" height="148" src="assets/images/section-exhibition-item-1.jpg" alt="">
-                                </a>
-                                <header class="card__header">
-                                    <h3 class="card__title" id="sectionExhibitionItem1Title">Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
-                                    <p class="card__subtitle">Выставка до 20 ноября</p>
-                                </header>
-                                <p class="card__description">Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст</p>
-                                <a class="card__link" id="sectionExhibitionItem1Link" aria-labelledby="sectionExhibitionItem1Link sectionExhibitionItem1Title" href="#">Купить билет</a>
-                            </article>
-                        </li>
-                        <li id="sectionExhibitionItem2">
-                            <article class="card">
-                                <a class="card__img-link" aria-labelledby="sectionExhibitionItem2Title" href="#">
-                                    <img class="card__img" width="312" height="148" src="assets/images/section-exhibition-item-2.jpg" alt="">
-                                </a>
-                                <header class="card__header">
-                                    <h3 class="card__title" id="sectionExhibitionItem2Title">Тату</h3>
-                                    <p class="card__subtitle">Выставка до 27 сентября</p>
-                                </header>
-                                <p class="card__description">Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст</p>
-                                <a class="card__link" id="sectionExhibitionItem2Link" aria-labelledby="sectionExhibitionItem2Link sectionExhibitionItem2Title" href="#">Купить билеты</a>
-                            </article>
-                        </li>
-                        <li id="sectionExhibitionItem3">
-                            <article class="card">
-                                <a class="card__img-link" aria-labelledby="sectionExhibitionItem3Title" href="#">
-                                    <img class="card__img" width="312" height="148" src="assets/images/section-exhibition-item-3.jpg" alt="">
-                                </a>
-                                <header class="card__header">
-                                    <h3 class="card__title" id="sectionExhibitionItem3Title">От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина</h3>
-                                    <p class="card__subtitle">Выставка до 1 ноября</p>
-                                </header>
-                                <p class="card__description">Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст</p>
-                                <a class="card__link" id="sectionExhibitionItem3Link" aria-labelledby="sectionExhibitionItem3Link sectionExhibitionItem3Title" href="#">Купить билет</a>
-                            </article>
-                        </li>
-                    </ul>
-                    <div class="exhibition-not-found-message" id="exhibitionNotFoundMessage" hidden>
-                        По данному фильтру событий не найдено
+        <section class="section" id="sectionCarousel">
+            <h2 class="section__title visually-hidden">Карусель событий (правда не доделанная)</h2>
+            <div class="section__content">
+                <div class="section-carousel__slider slider" id="sectionCarouselSlider" role="region" aria-roledescription="carousel" aria-label="Ближайшие события">
+                    <div class="slider__controls">
+                        <button class="slider__controls-btn slider__controls-btn_prev btn btn_icon" aria-label="Следующий слайд" data-slider-control-direction="1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="76" viewBox="0 0 42 76" fill="none">
+                                <path d="M1.38543 35.9147L36.4792 0.8209C37.641 -0.301142 39.4924 -0.268927 40.6144 0.89287C41.709 2.02622 41.709 3.82289 40.6144 4.95607L7.58818 37.9823L40.6144 71.0085C41.7561 72.1504 41.7561 74.0017 40.6144 75.1437C39.4723 76.2854 37.6211 76.2854 36.4792 75.1437L1.38543 40.0499C0.243679 38.9078 0.24368 37.0566 1.38543 35.9147Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="slider__controls-btn slider__controls-btn_next btn btn_icon" aria-label="Предыдущий слайд" data-slider-control-direction="1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="76" viewBox="0 0 42 76" fill="none">
+                                <path d="M40.6146 40.0853L5.52078 75.1791C4.35898 76.3011 2.50765 76.2689 1.38561 75.1071C0.290983 73.9738 0.290983 72.1771 1.38561 71.0439L34.4118 38.0177L1.38561 4.99153C0.24386 3.84961 0.24386 1.99827 1.38561 0.856354C2.5277 -0.285393 4.37886 -0.285393 5.52078 0.856354L40.6146 35.9501C41.7563 37.0922 41.7563 38.9434 40.6146 40.0853Z" fill="currentColor"/>
+                            </svg>
+                        </button>
                     </div>
-                </div>
-            </section>
-            <section class="section" id="sectionMuseum">
-                <h2 class="section__title" id="sectionMuseumTitle">Музей</h2>
-                <div class="tab-controls section__controls" role="tablist" aria-labelledby="sectionMuseumTitle">
-                    <button class="tab-controls__btn btn btn_theme_secondary" type="button" role="tab" aria-selected="true" aria-controls="sectionMuseumBuildingsTab" id="sectionMuseumBuildingsTabControl">
-                        Здания
-                    </button>
-                    <button class="tab-controls__btn btn btn_theme_secondary" type="button" role="tab" aria-selected="false" aria-controls="sectionMuseumHistoryTab" id="sectionMuseumHistoryTabControl" tabindex="-1">
-                        История
-                    </button>
-                </div>
-                <div class="section__content" id="sectionMuseumContent">
-                    <div class="tab" id="sectionMuseumBuildingsTab" role="tabpanel" aria-labelledby="sectionMuseumBuildingsTabControl">
-                        <ul class="list">
-                            <li id="sectionMuseumBuilding1">
-                                <article class="card">
-                                    <a class="card__img-link" aria-labelledby="sectionMuseumBuilding1Title" href="#">
-                                        <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-1.jpg" alt="">
-                                    </a>
-                                    <header class="card__header">
-                                        <h3 class="card__title" id="sectionMuseumBuilding1Title">МЕМОРИАЛЬНАЯ КВАРТИРА С.Т. РИХТЕРА</h3>
-                                    </header>
-                                    <p class="card__description">ул. Большая Бронная, 2/6, 16 этаж, кв. 58</p>
-                                    <a class="card__link" id="sectionMuseumBuilding1Link" aria-labelledby="sectionMuseumBuilding1Link sectionMuseumBuilding1Title" href="#">Подробнее</a>
-                                </article>
-                            </li>
-                            <li id="sectionMuseumBuilding2">
-                                <article class="card">
-                                    <a class="card__img-link" aria-labelledby="sectionMuseumBuilding2Title" href="#">
-                                        <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-2.jpg" alt="">
-                                    </a>
-                                    <header class="card__header">
-                                        <h3 class="card__title" id="sectionMuseumBuilding2Title">ЦЭВ «МУСЕЙОН»</h3>
-                                    </header>
-                                    <p class="card__description">Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)</p>
-                                    <a class="card__link" id="sectionMuseumBuilding2Link" aria-labelledby="sectionMuseumBuilding2Link sectionMuseumBuilding2Title" href="#">Подробнее</a>
-                                </article>
-                            </li>
-                            <li id="sectionMuseumBuilding3">
-                                <article class="card">
-                                    <a class="card__img-link" aria-labelledby="sectionMuseumBuilding3Title" href="#">
-                                        <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-3.jpg" alt="">
-                                    </a>
-                                    <header class="card__header">
-                                        <h3 class="card__title" id="sectionMuseumBuilding3Title">УСАДЬБА ЛОПУХИНЫХ</h3>
-                                    </header>
-                                    <p class="card__description">Малый Знаменский пер., 3/5с4</p>
-                                    <a class="card__link" id="sectionMuseumBuilding3Link" aria-labelledby="sectionMuseumBuilding3Link sectionMuseumBuilding3Title" href="#">Подробнее</a>
-                                </article>
-                            </li>
-                            <li id="sectionMuseumBuilding4">
-                                <article class="card">
-                                    <a class="card__img-link" aria-labelledby="sectionMuseumBuilding4Title" href="#">
-                                        <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-4.jpg" alt="">
-                                    </a>
-                                    <header class="card__header">
-                                        <h3 class="card__title" id="sectionMuseumBuilding4Title">УЧЕБНЫЙ МУЗЕЙ</h3>
-                                    </header>
-                                    <p class="card__description">ул. Чаянова, 15</p>
-                                    <a class="card__link" id="sectionMuseumBuilding4Link" aria-labelledby="sectionMuseumBuilding4Link sectionMuseumBuilding4Title" href="#">Подробнее</a>
-                                </article>
-                            </li>
-                            <li id="sectionMuseumBuilding5">
-                                <article class="card">
-                                    <a class="card__img-link" aria-labelledby="sectionMuseumBuilding5Title" href="#">
-                                        <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-5.jpg" alt="">
-                                    </a>
-                                    <header class="card__header">
-                                        <h3 class="card__title" id="sectionMuseumBuilding5Title">ОТДЕЛ ЛИЧНЫХ КОЛЛЕКЦИЙ</h3>
-                                    </header>
-                                    <p class="card__description">ул. Волхонка, 10</p>
-                                    <a class="card__link" id="sectionMuseumBuilding5Link" aria-labelledby="sectionMuseumBuilding5Link sectionMuseumBuilding5Title" href="#">Подробнее</a>
-                                </article>
-                            </li>
-                            <li id="sectionMuseumBuilding6">
-                                <article class="card">
-                                    <a class="card__img-link" aria-labelledby="sectionMuseumBuilding6Title" href="#">
-                                        <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-6.jpg" alt="">
-                                    </a>
-                                    <header class="card__header">
-                                        <h3 class="card__title" id="sectionMuseumBuilding6Title">ГАЛЕРЕЯ</h3>
-                                    </header>
-                                    <p class="card__description">ул. Волхонка, 14</p>
-                                    <a class="card__link" id="sectionMuseumBuilding6Link" aria-labelledby="sectionMuseumBuilding6Link sectionMuseumBuilding6Title" href="#">Подробнее</a>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab tab_hidden" id="sectionMuseumHistoryTab" role="tabpanel" aria-labelledby="sectionMuseumHistoryTabControl">
-                        <div class="article">
-                            <p>
-                                Государственный музей изобразительных искусств имени А.С. Пушкина – одно из крупнейших в России художественных собраний зарубежного искусства с древнейших времен до наших дней.
-                            </p>
-                            <p>
-                                В современной экспозиции представлены обширная учебная коллекция тонированных гипсовых слепков с произведений Античности, Средних веков и эпохи Возрождения, а также собрание подлинных произведений живописи, скульптуры, графики и декоративно-прикладного искусства.
-                            </p>
-                            <p>
-                                В залах первого этажа Главного здания представлены: произведения искусства Древнего Египта, Античности, собрание европейской живописи VIII–XVIII веков; два зала – Итальянский и Греческий дворики – занимают слепки. На втором этаже Главного здания в залах размещены слепки произведений искусства Древней Греции, Рима, Средних веков и Возрождения.
-                            </p>
-                            <p>
-                                В начале 2017 года музей определил новое направление своей деятельности – Пушкинский XXI, – ориентированное на современное российское и западное искусство во всех аспектах – выставочном, образовательном и исследовательском. Таким образом, ГМИИ им. А.С. Пушкина представляет собой открытую, интерактивную сцену, демонстрирующую развитие мировой культуры с древности до наших дней, живое, знакомое с детства пространство для получения знаний и общения.
-                            </p>
-                            <a href="#" class="article__link">Читать далее</a>
+                    <div class="slider__slides" aria-live="polite" aria-atomic="false">
+                        <div class="slider__slide slider__slide_active" role="group" aria-roledescription="slide" aria-label="1 из 2">
+                            <div class="section-carousel__slide">
+                                <img src="assets/images/section-carousel-slide-1.jpg" alt="От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина. 10 июля - 1 ноября. Главное здание">
+                                <a href="#" class="section-carousel__btn section-carousel__slide-btn btn btn_theme_primary" aria-label="Купить билеты онлайн">Билеты онлайн</a>
+                            </div>
+                        </div>
+                        <div class="slider__slide" role="group" aria-roledescription="slide" aria-label="2 из 2">
+                            <div class="section-carousel__slide">
+                                <img src="assets/images/section-carousel-slide-2.jpg" alt="Большой Шлёпа">
+                                <a href="#" class="section-carousel__btn section-carousel__slide-btn btn btn_theme_primary" aria-label="Купить билеты онлайн">Билеты онлайн</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="section" id="sectionOnline">
-                <h2 class="section__title" id="sectionOnlineTitle">Онлайн-трансляции</h2>
-                <div class="section__content">
-                    <div class="player">
-                        <iframe
-                                id="onlineTranslationIframe"
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/5qRR-5H1XgU?enablejsapi=1&origin=*"
-                                tabindex="-1"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                                title="Ай Вейвей: движение к общечеловеческому"
-                                loading="lazy"
-                        ></iframe>
-                        <button class="player__btn" id="startOnlineTranslationBtn" aria-label="Запустить видео Ай Вейвей: движение к общечеловеческому">
-                            <span class="player__btn-icon"></span>
-                        </button>
-                    </div>
+                <div class="section-carousel__actions container">
+                    <a href="#" class="section-carousel__btn btn btn_theme_primary">Купить билет</a>
+                    <a href="#" class="section-carousel__btn btn btn_theme_primary">Стать другом</a>
+                    <a href="#" class="section-carousel__btn btn btn_theme_primary">Онлайн-магазин</a>
                 </div>
-            </section>
-            <section class="section" id="sectionExcursion">
-                <h2 class="section__title" id="sectionExcursionTitle">Экскурсии и лекции в прямом эфире</h2>
-                <div class="section__content">
-                    <div class="excursion-info">
+            </div>
+        </section>
+        <section class="section container" id="sectionExhibition">
+            <h2 class="section__title" id="sectionExhibitionTitle">Выставки и события</h2>
+            <div class="section__controls">
+                <form class="form-filter form" id="formFilter" data-custom-validation="false">
+                    <h2 class="visually-hidden">Форма фильтрации событий по дате</h2>
+                    <fieldset class="tab-controls form-filter__fieldset form__fieldset">
+                        <legend class="visually-hidden">Фильтр по дате</legend>
+                        <label>
+                            <input class="form-filter__radio visually-hidden" type="radio" name="date" value="all" checked aria-controls="formFilterResultsCount">
+                            <span class="form-filter__btn btn btn_theme_secondary">Все</span>
+                        </label>
+                        <label>
+                            <input class="form-filter__radio visually-hidden" type="radio" name="date" value="today" aria-controls="formFilterResultsCount">
+                            <span class="form-filter__btn btn btn_theme_secondary">Сегодня</span>
+                        </label>
+                        <label>
+                            <input class="form-filter__radio visually-hidden" type="radio" name="date" value="tomorrow" aria-controls="formFilterResultsCount">
+                            <span class="form-filter__btn btn btn_theme_secondary">Завтра</span>
+                        </label>
+                    </fieldset>
+                    <output class="visually-hidden" id="formFilterResultsCount" aria-live="polite">Найдено событий: 3</output>
+                </form>
+            </div>
+            <div class="section__content" id="sectionExhibitionContent">
+                <ul class="list">
+                    <li id="sectionExhibitionItem1">
+                        <article class="card">
+                            <a class="card__img-link" aria-labelledby="sectionExhibitionItem1Title" href="#">
+                                <img class="card__img" width="312" height="148" src="assets/images/section-exhibition-item-1.jpg" alt="">
+                            </a>
+                            <header class="card__header">
+                                <h3 class="card__title" id="sectionExhibitionItem1Title">Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
+                                <p class="card__subtitle">Выставка до 20 ноября</p>
+                            </header>
+                            <p class="card__description">Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст</p>
+                            <a class="card__link" id="sectionExhibitionItem1Link" aria-labelledby="sectionExhibitionItem1Link sectionExhibitionItem1Title" href="#">Купить билет</a>
+                        </article>
+                    </li>
+                    <li id="sectionExhibitionItem2">
+                        <article class="card">
+                            <a class="card__img-link" aria-labelledby="sectionExhibitionItem2Title" href="#">
+                                <img class="card__img" width="312" height="148" src="assets/images/section-exhibition-item-2.jpg" alt="">
+                            </a>
+                            <header class="card__header">
+                                <h3 class="card__title" id="sectionExhibitionItem2Title">Тату</h3>
+                                <p class="card__subtitle">Выставка до 27 сентября</p>
+                            </header>
+                            <p class="card__description">Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст</p>
+                            <a class="card__link" id="sectionExhibitionItem2Link" aria-labelledby="sectionExhibitionItem2Link sectionExhibitionItem2Title" href="#">Купить билеты</a>
+                        </article>
+                    </li>
+                    <li id="sectionExhibitionItem3">
+                        <article class="card">
+                            <a class="card__img-link" aria-labelledby="sectionExhibitionItem3Title" href="#">
+                                <img class="card__img" width="312" height="148" src="assets/images/section-exhibition-item-3.jpg" alt="">
+                            </a>
+                            <header class="card__header">
+                                <h3 class="card__title" id="sectionExhibitionItem3Title">От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина</h3>
+                                <p class="card__subtitle">Выставка до 1 ноября</p>
+                            </header>
+                            <p class="card__description">Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст</p>
+                            <a class="card__link" id="sectionExhibitionItem3Link" aria-labelledby="sectionExhibitionItem3Link sectionExhibitionItem3Title" href="#">Купить билет</a>
+                        </article>
+                    </li>
+                </ul>
+                <div class="exhibition-not-found-message" id="exhibitionNotFoundMessage" hidden>
+                    По данному фильтру событий не найдено
+                </div>
+            </div>
+        </section>
+        <section class="section container" id="sectionMuseum">
+            <h2 class="section__title" id="sectionMuseumTitle">Музей</h2>
+            <div class="tab-controls section__controls" role="tablist" aria-labelledby="sectionMuseumTitle">
+                <button class="tab-controls__btn btn btn_theme_secondary" type="button" role="tab" aria-selected="true" aria-controls="sectionMuseumBuildingsTab" id="sectionMuseumBuildingsTabControl">
+                    Здания
+                </button>
+                <button class="tab-controls__btn btn btn_theme_secondary" type="button" role="tab" aria-selected="false" aria-controls="sectionMuseumHistoryTab" id="sectionMuseumHistoryTabControl" tabindex="-1">
+                    История
+                </button>
+            </div>
+            <div class="section__content" id="sectionMuseumContent">
+                <div class="tab" id="sectionMuseumBuildingsTab" role="tabpanel" aria-labelledby="sectionMuseumBuildingsTabControl">
+                    <ul class="list">
+                        <li id="sectionMuseumBuilding1">
+                            <article class="card">
+                                <a class="card__img-link" aria-labelledby="sectionMuseumBuilding1Title" href="#">
+                                    <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-1.jpg" alt="">
+                                </a>
+                                <header class="card__header">
+                                    <h3 class="card__title" id="sectionMuseumBuilding1Title">МЕМОРИАЛЬНАЯ КВАРТИРА С.Т. РИХТЕРА</h3>
+                                </header>
+                                <p class="card__description">ул. Большая Бронная, 2/6, 16 этаж, кв. 58</p>
+                                <a class="card__link" id="sectionMuseumBuilding1Link" aria-labelledby="sectionMuseumBuilding1Link sectionMuseumBuilding1Title" href="#">Подробнее</a>
+                            </article>
+                        </li>
+                        <li id="sectionMuseumBuilding2">
+                            <article class="card">
+                                <a class="card__img-link" aria-labelledby="sectionMuseumBuilding2Title" href="#">
+                                    <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-2.jpg" alt="">
+                                </a>
+                                <header class="card__header">
+                                    <h3 class="card__title" id="sectionMuseumBuilding2Title">ЦЭВ «МУСЕЙОН»</h3>
+                                </header>
+                                <p class="card__description">Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)</p>
+                                <a class="card__link" id="sectionMuseumBuilding2Link" aria-labelledby="sectionMuseumBuilding2Link sectionMuseumBuilding2Title" href="#">Подробнее</a>
+                            </article>
+                        </li>
+                        <li id="sectionMuseumBuilding3">
+                            <article class="card">
+                                <a class="card__img-link" aria-labelledby="sectionMuseumBuilding3Title" href="#">
+                                    <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-3.jpg" alt="">
+                                </a>
+                                <header class="card__header">
+                                    <h3 class="card__title" id="sectionMuseumBuilding3Title">УСАДЬБА ЛОПУХИНЫХ</h3>
+                                </header>
+                                <p class="card__description">Малый Знаменский пер., 3/5с4</p>
+                                <a class="card__link" id="sectionMuseumBuilding3Link" aria-labelledby="sectionMuseumBuilding3Link sectionMuseumBuilding3Title" href="#">Подробнее</a>
+                            </article>
+                        </li>
+                        <li id="sectionMuseumBuilding4">
+                            <article class="card">
+                                <a class="card__img-link" aria-labelledby="sectionMuseumBuilding4Title" href="#">
+                                    <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-4.jpg" alt="">
+                                </a>
+                                <header class="card__header">
+                                    <h3 class="card__title" id="sectionMuseumBuilding4Title">УЧЕБНЫЙ МУЗЕЙ</h3>
+                                </header>
+                                <p class="card__description">ул. Чаянова, 15</p>
+                                <a class="card__link" id="sectionMuseumBuilding4Link" aria-labelledby="sectionMuseumBuilding4Link sectionMuseumBuilding4Title" href="#">Подробнее</a>
+                            </article>
+                        </li>
+                        <li id="sectionMuseumBuilding5">
+                            <article class="card">
+                                <a class="card__img-link" aria-labelledby="sectionMuseumBuilding5Title" href="#">
+                                    <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-5.jpg" alt="">
+                                </a>
+                                <header class="card__header">
+                                    <h3 class="card__title" id="sectionMuseumBuilding5Title">ОТДЕЛ ЛИЧНЫХ КОЛЛЕКЦИЙ</h3>
+                                </header>
+                                <p class="card__description">ул. Волхонка, 10</p>
+                                <a class="card__link" id="sectionMuseumBuilding5Link" aria-labelledby="sectionMuseumBuilding5Link sectionMuseumBuilding5Title" href="#">Подробнее</a>
+                            </article>
+                        </li>
+                        <li id="sectionMuseumBuilding6">
+                            <article class="card">
+                                <a class="card__img-link" aria-labelledby="sectionMuseumBuilding6Title" href="#">
+                                    <img class="card__img" width="312" height="148" src="assets/images/section-museum-building-6.jpg" alt="">
+                                </a>
+                                <header class="card__header">
+                                    <h3 class="card__title" id="sectionMuseumBuilding6Title">ГАЛЕРЕЯ</h3>
+                                </header>
+                                <p class="card__description">ул. Волхонка, 14</p>
+                                <a class="card__link" id="sectionMuseumBuilding6Link" aria-labelledby="sectionMuseumBuilding6Link sectionMuseumBuilding6Title" href="#">Подробнее</a>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab tab_hidden" id="sectionMuseumHistoryTab" role="tabpanel" aria-labelledby="sectionMuseumHistoryTabControl">
+                    <div class="article">
                         <p>
-                            С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе Zoom; предусмотрен формат живого общения с возможностью задавать вопросы экскурсоводу (лектору).
-                            <a href="#" class="excursion-info__link">Подробнее</a>
+                            Государственный музей изобразительных искусств имени А.С. Пушкина – одно из крупнейших в России художественных собраний зарубежного искусства с древнейших времен до наших дней.
                         </p>
                         <p>
-                            Мы будем благодарны за любое <a href="#" class="excursion-info__link">пожертвование</a>. Все поступившие средства будут направлены на организацию онлайн-проектов для наших посетителей.
+                            В современной экспозиции представлены обширная учебная коллекция тонированных гипсовых слепков с произведений Античности, Средних веков и эпохи Возрождения, а также собрание подлинных произведений живописи, скульптуры, графики и декоративно-прикладного искусства.
                         </p>
+                        <p>
+                            В залах первого этажа Главного здания представлены: произведения искусства Древнего Египта, Античности, собрание европейской живописи VIII–XVIII веков; два зала – Итальянский и Греческий дворики – занимают слепки. На втором этаже Главного здания в залах размещены слепки произведений искусства Древней Греции, Рима, Средних веков и Возрождения.
+                        </p>
+                        <p>
+                            В начале 2017 года музей определил новое направление своей деятельности – Пушкинский XXI, – ориентированное на современное российское и западное искусство во всех аспектах – выставочном, образовательном и исследовательском. Таким образом, ГМИИ им. А.С. Пушкина представляет собой открытую, интерактивную сцену, демонстрирующую развитие мировой культуры с древности до наших дней, живое, знакомое с детства пространство для получения знаний и общения.
+                        </p>
+                        <a href="#" class="article__link">Читать далее</a>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+        <section class="section container" id="sectionOnline">
+            <h2 class="section__title" id="sectionOnlineTitle">Онлайн-трансляции</h2>
+            <div class="section__content">
+                <div class="player">
+                    <iframe
+                            id="onlineTranslationIframe"
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/5qRR-5H1XgU?enablejsapi=1&origin=*"
+                            tabindex="-1"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            title="Ай Вейвей: движение к общечеловеческому"
+                            loading="lazy"
+                    ></iframe>
+                    <button class="player__btn" id="startOnlineTranslationBtn" aria-label="Запустить видео Ай Вейвей: движение к общечеловеческому">
+                        <span class="player__btn-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="section container" id="sectionExcursion">
+            <h2 class="section__title" id="sectionExcursionTitle">Экскурсии и лекции в прямом эфире</h2>
+            <div class="section__content">
+                <div class="excursion-info">
+                    <p>
+                        С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе Zoom; предусмотрен формат живого общения с возможностью задавать вопросы экскурсоводу (лектору).
+                        <a href="#" class="excursion-info__link">Подробнее</a>
+                    </p>
+                    <p>
+                        Мы будем благодарны за любое <a href="#" class="excursion-info__link">пожертвование</a>. Все поступившие средства будут направлены на организацию онлайн-проектов для наших посетителей.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="container">

@@ -5,6 +5,8 @@ const modal = document.querySelector('#modal');
 const modalOpenBtn = document.querySelector('#loginModalOpenBtn');
 const modalCloseBtn = document.querySelector('#loginModalCloseBtn');
 
+dialogPolyfill.registerDialog(modal);
+
 const trap = focusTrap.createFocusTrap(modal, { escapeDeactivates: false });
 
 modalOpenBtn.addEventListener('click', function () {
@@ -223,3 +225,22 @@ startOnlineTranslationBtn.addEventListener('click', (evt) => {
 
     evt.target.remove();
 })
+
+/**
+ * Slider
+ */
+const slider = document.querySelector('#sectionCarouselSlider');
+const controls = Array.from(slider.querySelectorAll('.slider__controls-btn'));
+const slides = Array.from(slider.querySelectorAll('.slider__slide'));
+
+controls.forEach((control) => {
+   control.addEventListener('click', (evt) => {
+        const direction = Number(evt.currentTarget.dataset.sliderControlDirection);
+        const selectedSlideIndex = slides.findIndex((slide) => slide.classList.contains('slider__slide_active'));
+        const nextIndex = selectedSlideIndex + direction;
+        const normalizedNextIndex = nextIndex >= slides.length ? 0 : nextIndex < 0 ? slides.length - 1 : nextIndex;
+
+        slides.forEach((slide) => slide.classList.remove('slider__slide_active'));
+        slides[normalizedNextIndex].classList.add('slider__slide_active');
+   });
+});
