@@ -55,6 +55,7 @@ img {
 .modal {
     width: 792px;
     max-width: 100%;
+    height: auto;
     padding: 7rem 8.4rem 8.4rem;
     border: 3px solid #000;
     border-radius: 0.8rem;
