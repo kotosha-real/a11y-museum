@@ -10,7 +10,7 @@ dialogPolyfill.registerDialog(modal);
 const trap = focusTrap.createFocusTrap(modal, { escapeDeactivates: false });
 
 modalOpenBtn.addEventListener('click', function () {
-    bodyScrollLock.disableBodyScroll(modal);
+    document.body.classList.add('scroll-lock');
     modal.showModal();
     trap.activate();
 });
@@ -21,7 +21,7 @@ modalCloseBtn.addEventListener('click', function () {
 
 modal.addEventListener('close', (event) => {
     trap.deactivate();
-    bodyScrollLock.enableBodyScroll(modal);
+    document.body.classList.remove('scroll-lock');
 });
 
 /**
