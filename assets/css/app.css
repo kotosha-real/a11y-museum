@@ -61,14 +61,14 @@ img {
 .modal {
     width: 792px;
     max-width: 100%;
-    padding: 7rem 8.4rem 8.4rem;
+    padding: 4rem 6rem;
     border: 3px solid #000;
     border-radius: 0.8rem;
 }
 
 @media (max-width: 480px) {
     .modal {
-        padding: 3rem 4rem 4rem;
+        padding: 2rem 3rem;
     }
 
     .modal__close-btn {
@@ -294,7 +294,7 @@ img {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 2rem 4rem;
+    gap: 2rem;
 }
 
 .nav.nav_layout_vertical {
@@ -512,6 +512,10 @@ img {
     padding: 0 1.8rem;
 }
 
+.header__lang-controls-btn.header__lang-controls-btn_link {
+    background-color: unset;
+}
+
 .header__login-btn {
     padding: 0;
 }
@@ -593,7 +597,7 @@ img {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 2rem 4rem;
+    gap: 2rem;
 }
 
 .card__header {
